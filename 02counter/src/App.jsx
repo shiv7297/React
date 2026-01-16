@@ -11,10 +11,22 @@ function App() {
 
   const addValue = () => {
     //counter = counter + 1
+    
+    // //when we update directly then all these calls get batched together and onlye the last one takes effect
+    // setCounter(counter + 1)
+    // setCounter(counter + 1 )
+    // setCounter(counter + 1)
+    // setCounter(counter + 1)
+
+    //updating based on previous state
+
+
     setCounter(prevCounter => prevCounter + 1)
     setCounter(prevCounter => prevCounter + 1 )
     setCounter(prevCounter => prevCounter + 1)
-    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1)  
+    
+    // when we update state based on previous state(using callback) then all this calls happen one by one and all get reflected
     
   }
 
